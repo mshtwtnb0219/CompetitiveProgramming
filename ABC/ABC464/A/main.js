@@ -19,12 +19,14 @@ let index = 0;
 // const N = Number(input[index++]);
 
 // 1つの文字列
-const A = input[index++];
+const S = input[index++];
+
+const E = S.match(/[E]/g) !== null ? S.match(/[E]/g).length : 0;
+const W = S.match(/[W]/g) !== null ? S.match(/[W]/g).length : 0;
+console.log(E > W ? "East" : "West");
 
 // スペース区切りの整数
-// const [A, B, C] = input[index++].split("").map(Number);
-// console.log(C + A + B);
-console.log(A.slice(1, 3) + A.slice(0, 1));
+// const [A, B] = input[index++].split(" ").map(Number);
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);

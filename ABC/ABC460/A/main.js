@@ -19,13 +19,23 @@ let index = 0;
 // const N = Number(input[index++]);
 
 // 1つの文字列
-const A = input[index++];
+// const S = input[index++];
 
 // スペース区切りの整数
-// const [A, B, C] = input[index++].split("").map(Number);
-// console.log(C + A + B);
-console.log(A.slice(1, 3) + A.slice(0, 1));
+let [N, M] = input[index++].split(" ").map(Number);
 
+let Z = 0;
+let count = 0;
+
+while (M !== 0) {
+  Z = N % M;
+  M = Z;
+  count++;
+}
+
+console.log(count);
+
+// console.log(count);
 // N個の整数
 // const A = input[index++].split(" ").map(Number);
 
