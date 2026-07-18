@@ -1,2 +1,2 @@
-burger
-1
+thermometer
+4

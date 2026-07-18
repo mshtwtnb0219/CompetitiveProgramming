@@ -1,7 +1,6 @@
 // ===============================
 // 競技プログラミング用テンプレート
 // ===============================
-
 const fs = require("fs");
 
 const input = fs
@@ -15,18 +14,34 @@ let index = 0;
 // 入力
 // ===============================
 
-// 1つの文字列
-const S = input[index++];
 // 1つの整数
 const N = Number(input[index++]);
-// str = S.slice(N);
-// str = str.slice(0, -N - 1);
-// console.log(str);
 
-// console.log(S.substring(0,N))
-str = S.slice(N, S.length - N);
-console.log(S.slice(N, S.length - N));
-console.log(S.length - N);
+// 1つの文字列
+const S = input[index++];
+// if ('o' !== S.slice(0, 1) || 'oo' !== S.slice(0, 2)) {
+//   console.log(S);
+// } else {
+//   // ()最初に該当する文字列だけ
+//   const str = S.replace(/^o+/, "");
+//   console.log(str);
+// }
+
+let bool = false;
+let str = [];
+
+for (let i = 0; i < N; i++) {
+  if ("o" == S.slice(i, i + 1)) {
+    if (bool) {
+      str.push(S.slice(i, i + 1));
+    }
+  } else {
+    bool = true;
+    str.push(S.slice(i, i + 1));
+  }
+}
+
+console.log(str.join(""));
 
 // スペース区切りの整数
 // const [A, B] = input[index++].split(" ").map(Number);
@@ -41,10 +56,6 @@ console.log(S.length - N);
 // }
 
 // N行の文字列
-// const S = [];
-// for (let i = 0; i < N; i++) {
-//   S.push(input[index++]);
-// }
 
 // H×Wのグリッド
 // const grid = [];

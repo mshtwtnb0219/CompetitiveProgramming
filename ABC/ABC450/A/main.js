@@ -15,18 +15,23 @@ let index = 0;
 // 入力
 // ===============================
 
-// 1つの文字列
-const S = input[index++];
 // 1つの整数
 const N = Number(input[index++]);
-// str = S.slice(N);
-// str = str.slice(0, -N - 1);
-// console.log(str);
 
-// console.log(S.substring(0,N))
-str = S.slice(N, S.length - N);
-console.log(S.slice(N, S.length - N));
-console.log(S.length - N);
+let str = [];
+
+for (let i = N; i >= 1; i--) {
+  if (i === 1) {
+    str.push(i);
+  } else {
+    str.push(i + ",");
+  }
+}
+
+console.log(str.join(""));
+
+// 1つの文字列
+// const S = input[index++];
 
 // スペース区切りの整数
 // const [A, B] = input[index++].split(" ").map(Number);

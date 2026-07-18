@@ -15,21 +15,16 @@ let index = 0;
 // 入力
 // ===============================
 
-// 1つの文字列
-const S = input[index++];
 // 1つの整数
-const N = Number(input[index++]);
-// str = S.slice(N);
-// str = str.slice(0, -N - 1);
-// console.log(str);
+const N = Number(input[index++]); // 5
+const A = input[index++].split(" ").map(Number); // [1,2,3,4,5]
+const X = Number(input[index++]); // 3
 
-// console.log(S.substring(0,N))
-str = S.slice(N, S.length - N);
-console.log(S.slice(N, S.length - N));
-console.log(S.length - N);
+console.log(A[X - 1]);
+// 1つの文字列
+// const S = input[index++];
 
 // スペース区切りの整数
-// const [A, B] = input[index++].split(" ").map(Number);
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);

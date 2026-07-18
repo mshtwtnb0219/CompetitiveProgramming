@@ -15,18 +15,29 @@ let index = 0;
 // 入力
 // ===============================
 
-// 1つの文字列
-const S = input[index++];
 // 1つの整数
 const N = Number(input[index++]);
-// str = S.slice(N);
-// str = str.slice(0, -N - 1);
-// console.log(str);
+const A = [1, 2, 3, 4, 5, 6];
+const B = [1, 2, 3, 4, 5, 6];
+const C = [1, 2, 3, 4, 5, 6];
 
-// console.log(S.substring(0,N))
-str = S.slice(N, S.length - N);
-console.log(S.slice(N, S.length - N));
-console.log(S.length - N);
+bool = false;
+
+for (let x = 0; x < A.length; x++) {
+  for (let y = 0; y < B.length; y++) {
+    for (let z = 0; z < C.length; z++) {
+      if (N == A[x] + B[y] + C[z]) {
+        bool = true;
+        break;
+      }
+    }
+  }
+}
+
+console.log(bool ? "Yes" : "No");
+
+// 1つの文字列
+// const S = input[index++];
 
 // スペース区切りの整数
 // const [A, B] = input[index++].split(" ").map(Number);

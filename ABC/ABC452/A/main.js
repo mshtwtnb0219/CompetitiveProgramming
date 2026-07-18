@@ -15,21 +15,32 @@ let index = 0;
 // 入力
 // ===============================
 
-// 1つの文字列
-const S = input[index++];
 // 1つの整数
-const N = Number(input[index++]);
-// str = S.slice(N);
-// str = str.slice(0, -N - 1);
-// console.log(str);
+// const N = Number(input[index++]);
 
-// console.log(S.substring(0,N))
-str = S.slice(N, S.length - N);
-console.log(S.slice(N, S.length - N));
-console.log(S.length - N);
+// 1つの文字列
+// const S = input[index++];
 
 // スペース区切りの整数
-// const [A, B] = input[index++].split(" ").map(Number);
+const [M, D] = input[index++].split(" ").map(Number);
+const target = [M, D];
+
+const part1 = [1, 7];
+const part2 = [3, 3];
+const part3 = [5, 5];
+const part4 = [7, 7];
+const part5 = [9, 9];
+
+bool = false;
+
+const parts = [part1, part2, part3, part4, part5];
+for (const innner of parts) {
+  if (JSON.stringify(innner) === JSON.stringify(target)) {
+    bool = true;
+  }
+}
+
+console.log(bool ? "Yes" : "No");
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);

@@ -2,6 +2,7 @@
 // 競技プログラミング用テンプレート
 // ===============================
 
+const console = require("console");
 const fs = require("fs");
 
 const input = fs
@@ -15,24 +16,30 @@ let index = 0;
 // 入力
 // ===============================
 
-// 1つの文字列
-const S = input[index++];
 // 1つの整数
-const N = Number(input[index++]);
-// str = S.slice(N);
-// str = str.slice(0, -N - 1);
-// console.log(str);
+// const N = Number(input[index++]);
 
-// console.log(S.substring(0,N))
-str = S.slice(N, S.length - N);
-console.log(S.slice(N, S.length - N));
-console.log(S.length - N);
+// 1つの文字列
+// const S = input[index++];
 
 // スペース区切りの整数
-// const [A, B] = input[index++].split(" ").map(Number);
+let [N, X] = input[index++].split(" ").map(Number);
 
 // N個の整数
-// const A = input[index++].split(" ").map(Number);
+const A = input[index++].split(" ").map(Number);
+
+// 出力
+let result = [];
+for (let i = 0; i < N; i++) {
+  if (A[i] < X) {
+    result.push(1);
+    X = A[i];
+  } else {
+    result.push(0);
+  }
+}
+
+console.log(result.join("\n"));
 
 // N行の整数
 // const A = [];
