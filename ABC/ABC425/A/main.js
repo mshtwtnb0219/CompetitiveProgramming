@@ -16,16 +16,19 @@ let index = 0;
 // ===============================
 
 // 1つの整数
-// const N = Number(input[index++]);
+const N = Number(input[index++]);
+
+let sum = 0;
+for (let i = 1; i <= N; i++) {
+  sum = sum + (-1) ** i * i ** 3;
+}
+console.log(sum);
 
 // 1つの文字列
 // const S = input[index++];
 
 // スペース区切りの整数
 // const [A, B] = input[index++].split(" ").map(Number);
-
-// スペース区切りの文字列
-// const [A, B] = input[index++].split(" ").map(String);
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);

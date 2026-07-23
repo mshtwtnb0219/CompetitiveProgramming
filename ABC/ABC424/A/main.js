@@ -22,10 +22,8 @@ let index = 0;
 // const S = input[index++];
 
 // スペース区切りの整数
-// const [A, B] = input[index++].split(" ").map(Number);
-
-// スペース区切りの文字列
-// const [A, B] = input[index++].split(" ").map(String);
+const [A, B, C] = input[index++].split(" ").map(Number);
+console.log(A == B || A == C ? "Yes" : "No");
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);

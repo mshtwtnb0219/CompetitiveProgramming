@@ -22,10 +22,18 @@ let index = 0;
 // const S = input[index++];
 
 // スペース区切りの整数
-// const [A, B] = input[index++].split(" ").map(Number);
+const [X, C] = input[index++].split(" ").map(Number);
 
-// スペース区切りの文字列
-// const [A, B] = input[index++].split(" ").map(String);
+// sum = 0;
+// tax = 0;
+// while (sum + tax < X) {
+//   tax = tax + C;
+//   sum = sum + 1000;
+// }
+
+let cnt = X / (1000 + C);
+let ans = Math.trunc(cnt) * 1000;
+console.log(ans);
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);

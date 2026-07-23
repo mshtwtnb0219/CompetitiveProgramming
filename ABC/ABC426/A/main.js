@@ -19,13 +19,28 @@ let index = 0;
 // const N = Number(input[index++]);
 
 // 1つの文字列
-// const S = input[index++];
+const [X, Y] = input[index++].split(" ").map(String);
 
+bool = false;
+
+if (X === "Lynx") {
+  bool = true;
+} else if (X === "Ocelot") {
+  bool = false;
+  if (Y === "Ocelot") {
+    bool = true;
+  }
+} else if (X === "Serval") {
+  if (Y === "Lynx") {
+    bool = false;
+  } else if (Y === "Serval" || Y === "Ocelot") {
+    bool = true;
+  }
+}
+
+console.log(bool ? "Yes" : "No");
 // スペース区切りの整数
 // const [A, B] = input[index++].split(" ").map(Number);
-
-// スペース区切りの文字列
-// const [A, B] = input[index++].split(" ").map(String);
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);
