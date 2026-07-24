@@ -16,14 +16,17 @@ let index = 0;
 // ===============================
 
 // 1つの整数
-// const N = Number(input[index++]);
+const N = Number(input[index++]);
 
 // 1つの文字列
-// const S = input[index++];
+const S = input[index++];
+console.log("tea" == S.slice(-3) ? "Yes" : "No");
 
 // スペース区切りの整数
-const [A, B, C] = input[index++].split(" ").map(Number);
-console.log(A == B || A == C || B == C ? "Yes" : "No");
+// const [A, B] = input[index++].split(" ").map(Number);
+
+// スペース区切りの文字列
+// const [A, B] = input[index++].split(" ").map(String);
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);
