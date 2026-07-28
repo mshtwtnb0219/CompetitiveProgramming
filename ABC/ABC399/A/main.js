@@ -16,11 +16,20 @@ let index = 0;
 // ===============================
 
 // 1つの整数
-// const N = Number(input[index++]);
+const N = Number(input[index++]);
 
 // 1つの文字列
-// const S = input[index++];
+const S = input[index++];
+const T = input[index++];
 
+ans = 0;
+for (let i = 0; i < N; i++) {
+  if (S[i] !== T[i]) {
+    ans++;
+  }
+}
+
+console.log(ans);
 // スペース区切りの整数
 // const [A, B] = input[index++].split(" ").map(Number);
 
@@ -56,23 +65,6 @@ let index = 0;
 
 // ===============================
 // 処理
-// ===============================
-
-// ===============================
-// 便利関数
-
-//string.matchを使った正規表現で文字列がすべてが大文字ならtrue
-// const isUpperCase = (str) => {
-//   const arr = str.match(/^[A-Z]+$/);
-//   return arr ? true : false;
-// };
-
-//string.matchを使った正規表現で文字列がすべてが子文字ならtrue
-// const isUpperCase = (str) => {
-//   const arr = str.match(/^[A-Z]+$/);
-//   return arr ? true : false;
-// };
-
 // ===============================
 
 // ===============================

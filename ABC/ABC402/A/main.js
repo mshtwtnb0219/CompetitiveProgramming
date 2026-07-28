@@ -11,6 +11,11 @@ const input = fs
 
 let index = 0;
 
+//string.matchを使った正規表現で文字列がすべてが大文字ならtrue
+const isUpperCase = (str) => {
+  const arr = str.match(/^[A-Z]+$/);
+  return arr ? true : false;
+};
 // ===============================
 // 入力
 // ===============================
@@ -19,7 +24,15 @@ let index = 0;
 // const N = Number(input[index++]);
 
 // 1つの文字列
-// const S = input[index++];
+const S = input[index++].split("");
+let ans = "";
+
+for (const ele of S) {
+  if (isUpperCase(ele)) {
+    ans = ans + ele;
+  }
+}
+console.log(ans);
 
 // スペース区切りの整数
 // const [A, B] = input[index++].split(" ").map(Number);
@@ -56,23 +69,6 @@ let index = 0;
 
 // ===============================
 // 処理
-// ===============================
-
-// ===============================
-// 便利関数
-
-//string.matchを使った正規表現で文字列がすべてが大文字ならtrue
-// const isUpperCase = (str) => {
-//   const arr = str.match(/^[A-Z]+$/);
-//   return arr ? true : false;
-// };
-
-//string.matchを使った正規表現で文字列がすべてが子文字ならtrue
-// const isUpperCase = (str) => {
-//   const arr = str.match(/^[A-Z]+$/);
-//   return arr ? true : false;
-// };
-
 // ===============================
 
 // ===============================

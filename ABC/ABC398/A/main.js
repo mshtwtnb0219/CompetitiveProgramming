@@ -16,7 +16,31 @@ let index = 0;
 // ===============================
 
 // 1つの整数
-// const N = Number(input[index++]);
+const N = Number(input[index++]);
+let ans = "";
+pivot = 0;
+
+if (N % 2 == 0) {
+  pivot = N / 2 - 1;
+  for (let i = 0; i < N; i++) {
+    if (pivot == i || pivot + 1 == i) {
+      ans = ans + "=";
+    } else {
+      ans = ans + "-";
+    }
+  }
+} else {
+  pivot = Math.round(N / 2) - 1;
+  for (let i = 0; i < N; i++) {
+    if (pivot == i) {
+      ans = ans + "=";
+    } else {
+      ans = ans + "-";
+    }
+  }
+}
+
+console.log(ans);
 
 // 1つの文字列
 // const S = input[index++];
@@ -56,23 +80,6 @@ let index = 0;
 
 // ===============================
 // 処理
-// ===============================
-
-// ===============================
-// 便利関数
-
-//string.matchを使った正規表現で文字列がすべてが大文字ならtrue
-// const isUpperCase = (str) => {
-//   const arr = str.match(/^[A-Z]+$/);
-//   return arr ? true : false;
-// };
-
-//string.matchを使った正規表現で文字列がすべてが子文字ならtrue
-// const isUpperCase = (str) => {
-//   const arr = str.match(/^[A-Z]+$/);
-//   return arr ? true : false;
-// };
-
 // ===============================
 
 // ===============================
