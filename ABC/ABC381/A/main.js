@@ -16,7 +16,7 @@ let index = 0;
 // ===============================
 
 // 1つの整数
-// const N = Number(input[index++]);
+const N = Number(input[index++]);
 
 // 1つの文字列
 // const S = input[index++];
@@ -25,7 +25,39 @@ let index = 0;
 // const [A, B] = input[index++].split(" ").map(Number);
 
 // スペース区切りの文字列
-// const [A, B] = input[index++].split(" ").map(String);
+let S = input[index++];
+ans = false;
+
+joken2 = S.slice(0, (N + 1) / 2 - 1).split("");
+joken3 = S.slice((N + 1) / 2 - 1, (N + 1) / 2).split("");
+joken4 = S.slice((N + 1) / 2).split("");
+
+// console.log(joken2);
+// console.log(joken3);
+// console.log(joken4);
+
+const isCheck = (joken, str) => {
+  ans1 = true;
+  for (const ele of joken) {
+    if (ele != str) {
+      ans1 = false;
+      break;
+    }
+  }
+  return ans1;
+};
+
+if (N % 2 != 0) {
+  if (isCheck(joken2, "1")) {
+    if (isCheck(joken3, "/")) {
+      if (isCheck(joken4, "2")) {
+        ans = true;
+      }
+    }
+  }
+}
+
+console.log(ans ? "Yes" : "No");
 
 // N個の整数
 // const A = input[index++].split(" ").map(Number);
