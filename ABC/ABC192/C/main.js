@@ -22,7 +22,56 @@ let index = 0;
 // const S = input[index++];
 
 // スペース区切りの整数
-// const [A, B] = input[index++].split(" ").map(Number);
+let [N, K] = input[index++].split(" ").map(Number);
+
+ans = N;
+// g1 大きい順に並び変え
+const g1 = (arr) => {
+  num = String(arr).split("");
+  num.sort((a, b) => b.localeCompare(a));
+  return num;
+};
+
+// g2 小さい順に並び変え
+const g2 = (arr) => {
+  num = String(arr).split("");
+  // 0を排除
+  newArr = [];
+  for (const ele of num) {
+    if (ele != "0") newArr.push(ele);
+  }
+  newArr.sort((a, b) => a.localeCompare(b));
+  return newArr;
+};
+
+// f g1 - g2
+const f = (arr1, arr2) => {
+  ans = 0;
+
+  newArr1 = "";
+  newArr2 = "";
+
+  for (const ele of arr1) {
+    newArr1 = newArr1 + ele;
+  }
+
+  for (const ele of arr2) {
+    newArr2 = newArr2 + ele;
+  }
+
+  ans = Number(newArr1) - Number(newArr2);
+  return ans;
+};
+
+for (let i = 0; i < K; i++) {
+  if (i == 0) {
+    ans = f(g1(N), g2(N));
+  } else {
+    ans = f(g1(ans), g2(ans));
+  }
+}
+
+console.log(ans);
 
 // スペース区切りの文字列
 // const [A, B] = input[index++].split(" ").map(String);
@@ -72,19 +121,6 @@ let index = 0;
 //   const arr = str.match(/^[A-Z]+$/);
 //   return arr ? true : false;
 // };
-
-// num = String(N).split("");
-// 配列の要素の入れ替え　昇順
-// num.sort((a, b) => a.localeCompare(b));
-// console.log(num);
-// 配列の要素の入れ替え　降順
-// num.sort((a, b) => b.localeCompare(a));
-// console.log(num);
-
-// Number("001") // 1
-// Number("007") // 7
-// Number("010") // 10
-// Number("100") // 100
 
 // ===============================
 

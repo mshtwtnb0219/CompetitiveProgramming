@@ -22,7 +22,51 @@ let index = 0;
 // const S = input[index++];
 
 // スペース区切りの整数
-// const [A, B] = input[index++].split(" ").map(Number);
+let [H, W, x, y] = input[index++].split(" ").map(Number);
+let X = x - 1;
+let Y = y - 1;
+
+// N行の文字列
+const S = [];
+for (let i = 0; i < H; i++) {
+  S.push(input[index++].split("").map(String));
+}
+
+ans = 1;
+// 上
+for (let i = X - 1; i >= 0; i--) {
+  if (S[i][Y] === "#") {
+    break;
+  }
+  ans++;
+}
+
+// 下
+for (let i = X + 1; i < H; i++) {
+  if (S[i][Y] === "#") {
+    break;
+  }
+  ans++;
+}
+
+// 右
+for (let i = Y + 1; i < W; i++) {
+  if (S[X][i] === "#") {
+    break;
+  }
+  ans++;
+}
+
+// 左
+for (let i = Y - 1; i >= 0; i--) {
+  if (S[X][i] === "#") {
+    break;
+  }
+  ans++;
+}
+
+// console.log(S);
+console.log(ans);
 
 // スペース区切りの文字列
 // const [A, B] = input[index++].split(" ").map(String);
@@ -34,12 +78,6 @@ let index = 0;
 // const A = [];
 // for (let i = 0; i < N; i++) {
 //   A.push(Number(input[index++]));
-// }
-
-// N行の文字列
-// const S = [];
-// for (let i = 0; i < N; i++) {
-//   S.push(input[index++]);
 // }
 
 // H×Wのグリッド
@@ -72,19 +110,6 @@ let index = 0;
 //   const arr = str.match(/^[A-Z]+$/);
 //   return arr ? true : false;
 // };
-
-// num = String(N).split("");
-// 配列の要素の入れ替え　昇順
-// num.sort((a, b) => a.localeCompare(b));
-// console.log(num);
-// 配列の要素の入れ替え　降順
-// num.sort((a, b) => b.localeCompare(a));
-// console.log(num);
-
-// Number("001") // 1
-// Number("007") // 7
-// Number("010") // 10
-// Number("100") // 100
 
 // ===============================
 
