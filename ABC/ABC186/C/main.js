@@ -16,7 +16,28 @@ let index = 0;
 // ===============================
 
 // 1つの整数
-// const N = Number(input[index++]);
+let N = Number(input[index++]);
+
+ans = 0;
+
+// 10進数　→ 8進数に変換
+// const convert = () => {
+//   while (n > 0) {
+//     const remainder = n % 8; // 余り
+//     result = remainder + result;
+//     n = Math.floor(n); // 商
+//   }
+
+//   return result;
+// };
+
+for (let i = 1; i < N + 1; i++) {
+  if (!String(i).includes("7") && !String(i.toString(8)).includes("7")) {
+    ans++;
+  }
+}
+
+console.log(ans);
 
 // 1つの文字列
 // const S = input[index++];
@@ -85,22 +106,6 @@ let index = 0;
 // Number("007") // 7
 // Number("010") // 10
 // Number("100") // 100
-
-// 10進数　→ N進数
-// (83).toString(2); // "1010011"  2進数
-// (83).toString(8); // "123"      8進数
-// (83).toString(10); // "83"       10進数
-// (83).toString(16); // "53"       16進数
-
-// 自力で10進数　→　N進数変換  ※これは8進数に変換
-// let N = Number(input[index++]);
-// result = "";
-
-// while (N > 0) {
-//   const remainder = N % 8; // 余り
-//   result = remainder + result;
-//   N = Math.floor(N / 8); // 商
-// }
 
 // ===============================
 
